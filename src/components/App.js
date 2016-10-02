@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import Carousel from '../components/Carousel';
 import { IMAGES } from '../CarouselImages';
+import PostForm from '../components/PostForm';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const App = () => {
     return (
-      <div>
+      <div>      	
         <Carousel>
           {
             IMAGES.map(image =>
@@ -14,7 +16,11 @@ const App = () => {
             )
           }
         </Carousel>
+	    <MuiThemeProvider>
+	        <PostForm zDepth={2} />
+	    </MuiThemeProvider>
       </div>
     );
 }
+
 export default App;
