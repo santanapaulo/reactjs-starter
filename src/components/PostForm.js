@@ -28,7 +28,7 @@ const PostForm = (props) => {
     ...others,
   } = props;
 
-  const styles = getStyles(props);
+  const styles = getStyles();
 
   return (
     <div style={Object.assign(styles.page, pageStyle)}>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Carousel from '../components/Carousel';
 import { IMAGES } from '../CarouselImages';
-import PostForm from '../components/PostForm';
+// import PostForm from '../components/PostForm';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const App = () => {
@@ -16,9 +16,9 @@ const App = () => {
             )
           }
         </Carousel>
-	    <MuiThemeProvider>
+	    {/*<MuiThemeProvider>
 	        <PostForm zDepth={2} />
-	    </MuiThemeProvider>
+	    </MuiThemeProvider>*/}
       </div>
     );
 }
