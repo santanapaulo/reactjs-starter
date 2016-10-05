@@ -4,6 +4,26 @@ import Carousel from '../components/Carousel';
 import { IMAGES } from '../CarouselImages';
 
 import RegisterPage from './RegisterPage';
+import PostPage from './PostPage';
+import { COMMENT } from '../constants/text';
+
+const array = [ 
+  {
+    name: "paulo",
+    comment: COMMENT,
+    time: "2:30",
+  },
+  {
+    name: "smith",
+    comment: COMMENT,
+    time: "2:30",
+  },
+  {
+    name: "PPH",
+    comment: COMMENT,
+    time: "2:30",
+  },
+]
 
 class FirstPage extends Component {
 
@@ -23,6 +43,7 @@ class FirstPage extends Component {
   }
 
   render() {
+    const text = COMMENT;
     return (
       <div>
         <Carousel interval={6000}>
@@ -33,6 +54,9 @@ class FirstPage extends Component {
           }
         </Carousel>
         <RegisterPage />
+        <PostPage 
+          postList={array}
+        />
       </div>
     );
   }
