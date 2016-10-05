@@ -28,6 +28,7 @@
     "react-dom": "^0.14.3",
     "react-motion": "^0.4.5",
     "react-router": "^2.0.1",
-    "react-swipeable-views": "^0.7.9"
+    "react-swipeable-views": "^0.7.9",
+    "react-tap-event-plugin": "^1.0.0"
   }
 }

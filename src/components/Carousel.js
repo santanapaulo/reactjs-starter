@@ -8,7 +8,6 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const getStyles = () => {
   const styles = {
     root: {
-      width: 1000,
       height: 400,
       margin: 'auto',
       textAlign: 'center',
