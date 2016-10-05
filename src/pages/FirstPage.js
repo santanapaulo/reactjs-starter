@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Carousel from '../components/Carousel';
 import { IMAGES } from '../CarouselImages';
 
-import TextField from 'material-ui/TextField';
+import RegisterPage from './RegisterPage';
 
 class FirstPage extends Component {
 
@@ -28,17 +28,11 @@ class FirstPage extends Component {
         <Carousel interval={6000}>
           {
             IMAGES.map(image =>
-            <div>
               <img alt="Imagem" src={image} style={{ width: '100%', height: 400 }}/>
-            </div>
             )
           }
         </Carousel>
-        <TextField
-          hintText="Hint Text"
-          onChange={event => this.onChangeName(event)}
-        />
-        <span>{this.state.nome}</span>
+        <RegisterPage />
       </div>
     );
   }

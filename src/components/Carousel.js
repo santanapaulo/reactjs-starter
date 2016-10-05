@@ -11,6 +11,7 @@ const getStyles = () => {
       height: 400,
       margin: 'auto',
       textAlign: 'center',
+      marginBottom: 32,
     },
     slideStyle: {
     },
