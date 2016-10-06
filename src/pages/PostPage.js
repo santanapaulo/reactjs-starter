@@ -36,9 +36,7 @@ class PostPage extends Component {
     };
   }
 
-  handleClick() {
-    console.log('ok');
-    console.log(this.state);
+  handleClick = () => {
     this.setState({
       isEditing: !this.state.isEditing,
     });
@@ -56,7 +54,7 @@ class PostPage extends Component {
     const styles = getStyles();
 
     const getPost = () => {
-      const icon = this.state.isEditing ?
+      const icon = !this.state.isEditing ?
         <Save />
       :
         <Create />;
