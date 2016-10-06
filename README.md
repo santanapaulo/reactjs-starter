@@ -22,6 +22,6 @@ Click [aqui](https://github.com/santanapaulo/reactjs-starter/archive/master.zip)
 ####Referências importantes####
 
 <p>
-https://facebook.github.io/react/(https://facebook.github.io/react/) -> INDISPENSÁVEL! <br />
-https://willianjusten.com.br/comecando-com-react/(https://willianjusten.com.br/comecando-com-react/)
+https://facebook.github.io/react/ -> INDISPENSÁVEL! <br />
+https://willianjusten.com.br/comecando-com-react/
 </p>
