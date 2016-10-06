@@ -9,11 +9,10 @@ const getStyles = () => {
   const styles = {
     root: {
       height: 400,
-      margin: 'auto',
       textAlign: 'center',
       marginBottom: 32,
-    },
-    slideStyle: {
+      boxShadow: '0px 2px 12px #888888',
+      width: '60%',
     },
   };
 
@@ -36,7 +35,6 @@ const Carousel = (props) => {
       <AutoPlaySwipeableViews
         {...others}
         interval={interval}
-        slideStyle={Object.assign(styles.slideStyle, slideStyle)}
       >
         {children}
       </AutoPlaySwipeableViews>

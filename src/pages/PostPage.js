@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/raisedButton';
+import RaisedButton from 'material-ui/RaisedButton';
 
 const getStyles = () => {
   const styles = {
@@ -33,7 +33,6 @@ const PostPage = (props) => {
   const styles = getStyles();
 
   const getPost = () => {
-    console.log(postList);
     const posts = postList.map((post) => (
         <Paper style={Object.assign(styles.paper, paperStyle)} zDepth={zDepth}>
           <div className="header">
@@ -55,7 +54,6 @@ const PostPage = (props) => {
 
   return (
     <div className="post-page" style={Object.assign(styles.page, pageStyle)}>
-    {console.log(getPost())}
       {getPost()}
     </div>
   );
