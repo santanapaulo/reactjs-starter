@@ -87,7 +87,6 @@ class PostPage extends Component {
       )
       return posts;
     };
-
     
     return (
       <div className="post-page" style={Object.assign(styles.page, pageStyle)}>
