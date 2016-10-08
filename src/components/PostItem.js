@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react';
+import moment from 'moment';
 
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
@@ -12,8 +13,8 @@ import IconButton from 'material-ui/IconButton';
 const getStyles = () => {
   const styles = {
     paper: {
-      height: '400px',
-      width: '900px',
+      height: 300,
+      width: 900,
       margin: 20,
       textAlign: 'center',
       display: 'inline-block',
@@ -22,23 +23,29 @@ const getStyles = () => {
   return styles;
 };
 
-class PostItem extends Component {
 
+class PostItem extends Component {
   constructor(props){
     super(props);
     this.state = {
-      isEditing: false,
-    };
+      postText: '',
+      postDate: moment().format('LLLL'),
+      isEditing: true,
+    }
   }
 
   handleClick = () => {
     this.setState({
+      postDate: moment().format('LLLL'),
       isEditing: !this.state.isEditing,
-    });
-  }
+    })
+  };
 
-  render() {
+  onChangePostText = (e) => {
+    this.setState({ postText: e.target.value });
+  };
 
+  render () {
     const {
       post,
       zDepth,
@@ -46,11 +53,7 @@ class PostItem extends Component {
     } = this.props;
 
     const styles = getStyles();
-
-    const icon = this.state.isEditing ?
-        <Save />
-    :
-        <Create />;
+    const icon = this.state.isEditing ? <Save /> : <Create />;
 
     return (
       <div>
@@ -58,11 +61,11 @@ class PostItem extends Component {
           <div className="header">
             <div className="fields">
               <AccountCircle />
-              {post.name}
+              {this.props.name}
             </div>
             <div className="fields">
               <AccessTime />
-              {post.time}
+              {this.state.postDate}
             </div>
             <div className="fields">
               <IconButton
@@ -74,10 +77,11 @@ class PostItem extends Component {
           </div>
           <div className="comment-part">
             <TextField
-              value={post.comment}
+              value={this.state.postText}
               fullWidth={false}
               disabled={!this.state.isEditing}
-              onChange={e => this.props.onChange(e)}
+              onChange={e => this.onChangePostText(e)}
+              style={{ width: 800 }}
             />
             <br />
           </div>
@@ -85,7 +89,7 @@ class PostItem extends Component {
       </div>
     );
   }
-};
+}
 
 export default PostItem;
 

@@ -24,12 +24,13 @@
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
     "lodash": "^3.10.1",
+    "material-ui": "^0.15.4",
+    "moment": "^2.15.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-motion": "^0.4.5",
     "react-router": "^2.0.1",
     "react-swipeable-views": "^0.7.9",
-    "react-tap-event-plugin": "^1.0.0",
-    "material-ui": "^0.15.4"
+    "react-tap-event-plugin": "^1.0.0"
   }
 }

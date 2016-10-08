@@ -32,6 +32,7 @@ class FirstPage extends Component {
     this.state = {
       name: '',
       showFormPost: false,
+      posts: [],
     };
   }
 
@@ -42,10 +43,10 @@ class FirstPage extends Component {
   onChangeName = (e) => {
     this.setState({ name: e.target.value });
   };
-
-  handleSave = () => {
+  
+  handleSaveName = () => {
     if(this.state.name) {
-      this.setState({ showFormPost: true, });
+      this.setState({ showFormPost: true });
     } else {
       window.alert('Tem que digitar o nome galera!');
     }
@@ -57,6 +58,7 @@ class FirstPage extends Component {
     const {
       name,
       showFormPost,
+      posts,
     } = this.state;
 
     return (
@@ -69,18 +71,31 @@ class FirstPage extends Component {
               )
             }
           </Carousel>
-          <div style={{ alignSelf: 'center', width: '40%', textAlign: 'center' }}>Sejam bem vindos!</div>
+          <div
+            style={{
+              alignSelf: 'center',
+              width: '40%',
+              textAlign: 'center',
+              fontSize: 50,
+              fontFamily: 'fantasy',
+              textShadow: '1px 1px gray',
+              display: 'flex',
+              justifyContent: 'center',
+            }}
+          >Sejam bem vindos!
+          </div>
         </div>
-        {!showFormPost &&
+        {!showFormPost ?
           <RegisterPage
             value={name}
             onChange={this.onChangeName}
-            onClick={this.handleSave}
+            onClick={this.handleSaveName}
           />
-        }
+          :
         <PostPage
-          postList={array}
+          name={this.state.name}
         />
+        }
       </div>
     );
   }

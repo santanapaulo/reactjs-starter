@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-
+import React, { PropTypes, Component } from 'react';
+import moment from 'moment';
 import PostItem from '../components/PostItem';
 
 const getStyles = () => {
@@ -13,30 +13,31 @@ const getStyles = () => {
   return styles;
 };
 
-const PostPage = (props) => {
-  const {
-    postList,
-    pageStyle,
-  } = props;
+class PostPage extends Component {
+  constructor(props){
+    super(props);
+  }
+
+  render() {
+    const {
+      postList,
+      pageStyle,
+    } = this.props;
 
   const styles = getStyles();
-
-  const getPost = () => {
-    console.log(postList);
-    const posts = postList.map((post) => (
+    const posts = (
       <PostItem
-        post={post}
+        name={this.props.name}
       />
-    ))
-    return posts;
-  };
+    );
   
   return (
     <div className="post-page" style={Object.assign(styles.page, pageStyle)}>
-      {getPost()}
+      {posts}
     </div>
   );
 };
+}
 
 PostPage.propTypes = {
   pageStyle: PropTypes.object,
