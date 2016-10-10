@@ -5,25 +5,6 @@ import { IMAGES } from '../CarouselImages';
 
 import RegisterPage from './RegisterPage';
 import PostPage from './PostPage';
-import { COMMENT } from '../constants/text';
-
-const array = [
-  {
-    name: "paulo",
-    comment: COMMENT,
-    time: "2:30",
-  },
-  {
-    name: "smith",
-    comment: COMMENT,
-    time: "2:30",
-  },
-  {
-    name: "PPH",
-    comment: COMMENT,
-    time: "2:30",
-  },
-]
 
 class FirstPage extends Component {
 
@@ -32,11 +13,10 @@ class FirstPage extends Component {
     this.state = {
       name: '',
       showFormPost: false,
-      posts: [],
     };
   }
 
-  componentDidMount() { 
+  componentDidMount() {
     document.title = 'Novo titulo';
   }
 
@@ -53,8 +33,6 @@ class FirstPage extends Component {
   };
 
   render() {
-    const text = COMMENT;
-
     const {
       name,
       showFormPost,
