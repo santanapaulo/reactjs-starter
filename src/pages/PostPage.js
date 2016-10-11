@@ -30,14 +30,20 @@ class PostPage extends Component {
     }
   }
 
-  addPost = () => {
-    this.state.posts.push(
-      {
+  handleAdd = () => {
+    const postItems = this.state.posts;
+
+    postItems.push(
+        {
           postItem: (<PostItem
             name={this.props.name}
           />)
-      }
-    )
+        }
+    );
+
+    this.setState({
+      posts: postItems,
+    })
   };
 
   render() {
@@ -46,27 +52,26 @@ class PostPage extends Component {
       pageStyle,
     } = this.props;
 
-  const styles = getStyles();
+    const styles = getStyles();
 
-  const posts = this.state.posts.map((post) => (
-    post.postItem
-  ));
+    const posts = this.state.posts.map((post) => (
+      post.postItem
+    ));
     
-  console.log(posts);
-  return (
-    <div className="post-page" style={Object.assign(styles.page, pageStyle)}>
-      {posts}
-      <div style={{ textAlign: 'right', width: 900, paddingBottom: 30 }}>
-        <RaisedButton
-          primary={true}
-          label="Add"
-          icon={<AddCircle />}
-          onClick={this.addPost}
-        />
+    return (
+      <div className="post-page" style={Object.assign(styles.page, pageStyle)}>
+        {posts}
+        <div style={{ textAlign: 'right', width: 900, paddingBottom: 30 }}>
+          <RaisedButton
+            primary={true}
+            label="Add"
+            icon={<AddCircle />}
+            onClick={this.handleAdd}
+          />
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 }
 
 PostPage.propTypes = {
