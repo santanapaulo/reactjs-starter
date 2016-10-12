@@ -61,8 +61,9 @@ class PostPage extends Component {
     return (
       <div className="post-page" style={Object.assign(styles.page, pageStyle)}>
         {posts}
-        <div style={{ textAlign: 'right', width: 900, paddingBottom: 30 }}>
+        <div style={{ textAlign: 'right', width: 900, paddingBottom: 30, alignSelf: 'center' }}>
           <RaisedButton
+            style={{ width: '100%', textAlign: 'center' }}
             primary={true}
             label="Add"
             icon={<AddCircle />}
