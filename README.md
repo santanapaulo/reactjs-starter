@@ -17,3 +17,13 @@ Click [aqui](https://github.com/santanapaulo/reactjs-starter/archive/master.zip)
 
 	> npm install
 	> npm start
+
+
+####Referências importantes####
+
+<p>
+https://facebook.github.io/react/ -> INDISPENSÁVEL! <br />
+https://willianjusten.com.br/comecando-com-react/ <br />
+http://momentjs.com/ <br />
+https://www.npmjs.com/ <br />
+</p>
