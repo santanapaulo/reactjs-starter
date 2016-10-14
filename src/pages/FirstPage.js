@@ -44,8 +44,10 @@ class FirstPage extends Component {
         <div style={{ display: 'flex' }}>
           <Carousel interval={6000}>
             {
-              IMAGES.map(image =>
+              IMAGES.map((image, i) =>
+              <div key={i}>
                 <img alt="Imagem" src={image} style={{ width: '100%', height: 400 }}/>
+              </div>
               )
             }
           </Carousel>
@@ -77,6 +79,5 @@ class FirstPage extends Component {
       </div>
     );
   }
-
 }
 export default FirstPage;

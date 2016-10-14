@@ -77,6 +77,7 @@ class PostItem extends Component {
           </div>
           <div className="comment-part">
             <TextField
+              hintText="Digite aqui seu comentário"
               value={this.state.postText}
               fullWidth={false}
               disabled={!this.state.isEditing}
