@@ -8,12 +8,13 @@ import AccountCircle from 'material-ui/svg-icons/action/account-circle';
 import AccessTime from 'material-ui/svg-icons/device/access-time';
 import Save from 'material-ui/svg-icons/content/save';
 import Create from 'material-ui/svg-icons/content/create';
+import Delete from 'material-ui/svg-icons/action/delete';
 import IconButton from 'material-ui/IconButton';
 
 const getStyles = () => {
   const styles = {
     paper: {
-      height: 300,
+      height: 200,
       width: 900,
       margin: 20,
       textAlign: 'center',
@@ -47,13 +48,17 @@ class PostItem extends Component {
 
   render () {
     const {
-      post,
       zDepth,
       paperStyle,
+      id,
     } = this.props;
 
     const styles = getStyles();
     const icon = this.state.isEditing ? <Save /> : <Create />;
+
+    const handleRemove = () => {
+      this.props.handleRemove(id);
+    }
 
     return (
       <div>
@@ -68,6 +73,14 @@ class PostItem extends Component {
               {this.state.postDate}
             </div>
             <div className="fields">
+              {this.props.id ?
+                <IconButton
+                  onClick={handleRemove}
+                >
+                  <Delete />
+                </IconButton>
+              :
+                null}
               <IconButton
                 onClick={this.handleClick}
               >

@@ -17,7 +17,7 @@ class FirstPage extends Component {
   }
 
   componentDidMount() {
-    document.title = 'Novo titulo';
+    document.title = 'Introdução ao React';
   }
 
   onChangeName = (e) => {

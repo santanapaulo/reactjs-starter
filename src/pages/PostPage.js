@@ -19,8 +19,10 @@ class PostPage extends Component {
   constructor(props){
     super(props);
     this.state = {
+      countId: 1,
       posts: [
         {
+          id: 1,
           postItem: (<PostItem
             name={this.props.name}
           />)
@@ -29,18 +31,36 @@ class PostPage extends Component {
     }
   }
 
+  handleRemove = (id) => {
+    let postItems = this.state.posts;
+    postItems.map((post) => {
+      if (post.id > 1 && post.id === id) {
+        const removePors = postItems.indexOf(post);
+        postItems.splice(removePors, 1);
+      }
+    });
+
+    this.setState({
+      posts: postItems,
+    });
+  };
+
   handleAdd = () => {
     const postItems = this.state.posts;
 
     postItems.push(
         {
+          id: this.state.countId + 1,
           postItem: (<PostItem
             name={this.props.name}
+            id={this.state.countId + 1}
+            handleRemove={this.handleRemove}
           />)
         }
     );
 
     this.setState({
+      countId: this.state.countId + 1,
       posts: postItems,
     })
   };
@@ -54,7 +74,9 @@ class PostPage extends Component {
     const styles = getStyles();
 
     const posts = this.state.posts.map((post) => (
-      post.postItem
+      <div key={post.id}>
+        {post.postItem}
+      </div>
     ));
     
     return (
@@ -63,7 +85,7 @@ class PostPage extends Component {
         <div style={{ textAlign: 'right', width: 900, paddingBottom: 30, alignSelf: 'center' }}>
           <RaisedButton
             style={{ width: '100%', textAlign: 'center' }}
-            primary={true}
+            backgroundColor="#5FDAF9"
             label="Add"
             icon={<AddCircle />}
             onClick={this.handleAdd}
