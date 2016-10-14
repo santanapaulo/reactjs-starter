@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 
 import Carousel from '../components/Carousel';
 import { IMAGES } from '../CarouselImages';
@@ -7,6 +7,11 @@ import RegisterPage from './RegisterPage';
 import PostPage from './PostPage';
 
 class FirstPage extends Component {
+
+  static propTypes = {
+    showFormPost: PropTypes.bool,
+    name: PropTypes.any,
+  }
 
   constructor(props){
     super(props);
@@ -36,7 +41,6 @@ class FirstPage extends Component {
     const {
       name,
       showFormPost,
-      posts,
     } = this.state;
 
     return (

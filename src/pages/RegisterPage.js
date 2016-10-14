@@ -1,9 +1,15 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
 class RegisterPage extends Component {
+
+  static propTypes = {
+    onClick: PropTypes.func,
+    onChange: PropTypes.func,
+    value: PropTypes.any,
+  }
 
   handleSaveName = () => {
     if(this.props.onClick) this.props.onClick();

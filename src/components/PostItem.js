@@ -26,6 +26,17 @@ const getStyles = () => {
 
 
 class PostItem extends Component {
+
+  static propTypes = {
+    postText: PropTypes.string,
+    postDate: PropTypes.instanceOf(moment),
+    isEditing: PropTypes.bool,
+    paperStyle: PropTypes.object,
+    zDepth: PropTypes.number,
+    id: PropTypes.number,
+    handleRemove: PropTypes.func,
+  };
+
   constructor(props){
     super(props);
     this.state = {
@@ -33,7 +44,7 @@ class PostItem extends Component {
       postDate: moment().format('LLLL'),
       isEditing: true,
     }
-  }
+  };
 
   handleClick = () => {
     this.setState({

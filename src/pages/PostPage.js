@@ -16,6 +16,13 @@ const getStyles = () => {
 };
 
 class PostPage extends Component {
+
+  static propTypes = {
+    pageStyle: PropTypes.object,
+    id: PropTypes.number,
+    postItem: PropTypes.object,
+  };
+
   constructor(props){
     super(props);
     this.state = {
@@ -67,7 +74,6 @@ class PostPage extends Component {
 
   render() {
     const {
-      postList,
       pageStyle,
     } = this.props;
 
@@ -95,10 +101,5 @@ class PostPage extends Component {
     );
   };
 }
-
-PostPage.propTypes = {
-  pageStyle: PropTypes.object,
-  postList: PropTypes.array,
-};
 
 export default PostPage;
