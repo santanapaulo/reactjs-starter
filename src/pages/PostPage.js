@@ -43,12 +43,12 @@ class PostPage extends Component {
   };
 
   handleAdd = () => {
-    const postItems = this.state.posts;
+    let postItems = this.state.posts;
     postItems.push(
-        {
-          id: postItems[postItems.length - 1].id + 1,
-          name: this.props.name,
-        },
+      {
+        id: postItems[postItems.length - 1].id + 1,
+        name: this.props.name,
+      },
     );
 
     this.setState({
