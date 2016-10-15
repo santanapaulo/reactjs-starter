@@ -23,38 +23,33 @@ class PostPage extends Component {
       posts: [
         {
           id: 1,
-          postItem: (<PostItem name={this.props.name} id={1} />)
+          name: this.props.name,
         },
       ]
     }
   }
 
   handleRemove = (id) => {
-    let postItems = this.state.posts;
-    postItems.map((post) => {
-      if (post.id > 1 && post.id === id) {
-        const removePosts = postItems.indexOf(post);
-        postItems.splice(removePosts, 1);
-      }
-    });
+    if (this.state.posts.length > 1) {
+      let postItems = this.state.posts.filter((item) => {
+        return item.id !== id;
+      });
 
-    this.setState({
-      posts: postItems,
-    });
+      this.setState({
+        posts: postItems,
+      });
+    } else {
+      window.alert('Você deve ter no mínimo um post!');
+    }
   };
 
   handleAdd = () => {
     const postItems = this.state.posts;
-
     postItems.push(
         {
           id: this.state.countId + 1,
-          postItem: (<PostItem
-            name={this.props.name}
-            id={this.state.countId + 1}
-            onRemove={this.handleRemove}
-          />)
-        }
+          name: this.props.name,
+        },
     );
 
     this.setState({
@@ -72,7 +67,11 @@ class PostPage extends Component {
 
     const posts = this.state.posts.map((post) => (
       <div key={post.id}>
-        {post.postItem}
+        <PostItem
+          id={post.id}
+          name={post.name}
+          onRemove={this.handleRemove}
+        />
       </div>
     ));
     
