@@ -31,7 +31,7 @@ class PostPage extends Component {
 
   handleRemove = (id) => {
     if (this.state.posts.length > 1) {
-      let postItems = this.state.posts.filter((item) => {
+      const postItems = this.state.posts.filter((item) => {
         return item.id !== id;
       });
 
