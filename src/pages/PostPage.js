@@ -44,7 +44,7 @@ class PostPage extends Component {
   };
 
   handleAdd = () => {
-    const postItems = this.state.posts;
+    let postItems = this.state.posts;
 
     postItems.push(
         {
@@ -70,8 +70,8 @@ class PostPage extends Component {
 
     const styles = getStyles();
 
-    const posts = this.state.posts.map((post) => (
-      <div key={post.id}>
+    const posts = this.state.posts.map((post, index) => (
+      <div key={index}>
         {post.postItem}
       </div>
     ));
