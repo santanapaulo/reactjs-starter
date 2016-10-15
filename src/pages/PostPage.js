@@ -19,7 +19,6 @@ class PostPage extends Component {
   constructor(props){
     super(props);
     this.state = {
-      countId: 1,
       posts: [
         {
           id: 1,
@@ -47,13 +46,12 @@ class PostPage extends Component {
     const postItems = this.state.posts;
     postItems.push(
         {
-          id: this.state.countId + 1,
+          id: postItems[postItems.length - 1].id + 1,
           name: this.props.name,
         },
     );
 
     this.setState({
-      countId: this.state.countId + 1,
       posts: postItems,
     })
   };
@@ -74,7 +72,7 @@ class PostPage extends Component {
         />
       </div>
     ));
-    
+
     return (
       <div className="post-page" style={Object.assign(styles.page, pageStyle)}>
         {posts}
