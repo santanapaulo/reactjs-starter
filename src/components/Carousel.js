@@ -21,17 +21,15 @@ const getStyles = () => {
 
 const Carousel = (props) => {
   const {
-    rootStyle,
     children,
     interval,
-    slideStyle,
     ...others,
   } = props;
 
-  const styles = getStyles(props);
+  const styles = getStyles();
 
   return (
-    <div style={Object.assign(styles.root, rootStyle)}>
+    <div style={styles.root}>
       <AutoPlaySwipeableViews
         {...others}
         interval={interval}
@@ -45,8 +43,6 @@ const Carousel = (props) => {
 Carousel.propTypes = {
   children: PropTypes.any,
   interval: PropTypes.number,
-  slideStyle: PropTypes.object,
-  rootStyle: PropTypes.object,
 };
 
 Carousel.defaultProps = {

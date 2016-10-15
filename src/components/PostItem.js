@@ -27,16 +27,6 @@ const getStyles = () => {
 
 class PostItem extends Component {
 
-  static propTypes = {
-    postText: PropTypes.string,
-    postDate: PropTypes.instanceOf(moment),
-    isEditing: PropTypes.bool,
-    paperStyle: PropTypes.object,
-    zDepth: PropTypes.number,
-    id: PropTypes.number,
-    handleRemove: PropTypes.func,
-  };
-
   constructor(props){
     super(props);
     this.state = {
@@ -57,44 +47,34 @@ class PostItem extends Component {
     this.setState({ postText: e.target.value });
   };
 
+  handleRemove = () => {
+    this.props.onRemove(this.props.id);
+  }
+
   render () {
     const {
-      zDepth,
-      paperStyle,
       id,
+      name,
     } = this.props;
 
     const styles = getStyles();
     const icon = this.state.isEditing ? <Save /> : <Create />;
 
-    const handleRemove = () => {
-      this.props.handleRemove(id);
-    }
-
     return (
       <div>
-        <Paper style={Object.assign(styles.paper, paperStyle)} zDepth={zDepth}>
+        <Paper style={styles.paper}>
           <div className="header">
             <div className="fields">
               <AccountCircle />
-              {this.props.name}
+              {name}
             </div>
             <div className="fields">
               <AccessTime />
               {this.state.postDate}
             </div>
             <div className="fields">
-              {this.props.id ?
-                <IconButton
-                  onClick={handleRemove}
-                >
-                  <Delete />
-                </IconButton>
-              :
-                null}
-              <IconButton
-                onClick={this.handleClick}
-              >
+              {id ? <IconButton onClick={this.handleRemove}> <Delete /> </IconButton> : null }
+              <IconButton onClick={this.handleClick}>
                 {icon}
               </IconButton>
             </div>
@@ -115,6 +95,12 @@ class PostItem extends Component {
     );
   }
 }
+
+PostItem.propTypes = {
+  name: PropTypes.string,
+  id: PropTypes.number,
+  onRemove: PropTypes.func,
+};
 
 export default PostItem;
 

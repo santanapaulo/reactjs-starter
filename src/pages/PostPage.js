@@ -16,13 +16,6 @@ const getStyles = () => {
 };
 
 class PostPage extends Component {
-
-  static propTypes = {
-    pageStyle: PropTypes.object,
-    id: PropTypes.number,
-    postItem: PropTypes.object,
-  };
-
   constructor(props){
     super(props);
     this.state = {
@@ -30,9 +23,7 @@ class PostPage extends Component {
       posts: [
         {
           id: 1,
-          postItem: (<PostItem
-            name={this.props.name}
-          />)
+          postItem: (<PostItem name={this.props.name} id={1} />)
         },
       ]
     }
@@ -42,8 +33,8 @@ class PostPage extends Component {
     let postItems = this.state.posts;
     postItems.map((post) => {
       if (post.id > 1 && post.id === id) {
-        const removePors = postItems.indexOf(post);
-        postItems.splice(removePors, 1);
+        const removePosts = postItems.indexOf(post);
+        postItems.splice(removePosts, 1);
       }
     });
 
@@ -61,7 +52,7 @@ class PostPage extends Component {
           postItem: (<PostItem
             name={this.props.name}
             id={this.state.countId + 1}
-            handleRemove={this.handleRemove}
+            onRemove={this.handleRemove}
           />)
         }
     );
@@ -101,5 +92,9 @@ class PostPage extends Component {
     );
   };
 }
+
+PostPage.propTypes = {
+  name: PropTypes.string,
+};
 
 export default PostPage;

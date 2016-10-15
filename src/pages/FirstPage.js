@@ -8,11 +8,6 @@ import PostPage from './PostPage';
 
 class FirstPage extends Component {
 
-  static propTypes = {
-    showFormPost: PropTypes.bool,
-    name: PropTypes.any,
-  }
-
   constructor(props){
     super(props);
     this.state = {
@@ -84,4 +79,5 @@ class FirstPage extends Component {
     );
   }
 }
+
 export default FirstPage;
