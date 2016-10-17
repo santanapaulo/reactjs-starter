@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const App = () => {
     return (
-      <div>React simple starter</div>
+      <div>Primeira aplicação React!</div>
     );
 }
 export default App;
