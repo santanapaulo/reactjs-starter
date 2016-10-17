@@ -1,7 +1,7 @@
 {
   "name": "react-simple-starter",
   "version": "1.0.0",
-  "description": "Simple starter package for React and Babel",
+  "description": "Pacote para inicialização de React",
   "main": "index.js",
   "repository": "https://github.com/santanapaulo/reactjs-starter.git",
   "scripts": {
