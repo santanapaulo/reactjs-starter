@@ -83,7 +83,6 @@ class PostItem extends Component {
             <TextField
               hintText="Digite aqui seu comentário"
               value={this.state.postText}
-              fullWidth={false}
               disabled={!this.state.isEditing}
               onChange={e => this.onChangePostText(e)}
               style={{ width: 800 }}
