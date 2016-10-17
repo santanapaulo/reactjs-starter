@@ -1,0 +1,26 @@
+.post-page {
+  display: flex;
+  flex-direction: column;
+}
+.post-page
+.header {
+  min-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5FDAF9;
+}
+
+.post-page
+.header
+.fields {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+}
+
+.post-page
+.comment-part {
+  justify-content: flex-start;
+  padding: 20px 10px 0px 10px;
+}
